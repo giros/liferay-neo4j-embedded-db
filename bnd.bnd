@@ -1,0 +1,4 @@
+Bundle-Name: Liferay Liferay Embedded Neo4j Database
+Bundle-SymbolicName: com.liferay.neo4j.embedded
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.neo4j.embedded
