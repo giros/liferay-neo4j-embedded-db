@@ -16,7 +16,6 @@ package com.liferay.neo4j.embedded;
 
 import aQute.bnd.annotation.metatype.Configurable;
 import com.liferay.neo4j.embedded.configuration.EmbdeddedGraphDatabaseConfiguration;
-
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.osgi.service.component.annotations.Activate;
