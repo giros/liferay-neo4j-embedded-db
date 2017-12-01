@@ -5,4 +5,29 @@ Export-Package: com.liferay.neo4j.embedded
 Import-Package:\
 	!com.barchart.udt,\
 	!com.barchart.udt.nio,\
+	!com.fasterxml.aalto,\
+	!com.fasterxml.aalto.stax,\
+	!com.google.protobuf,\
+	!com.google.protobuf.nano,\
+	!com.jcraft.jzlib,\
+	!com.ning.compress,\
+	!com.ning.compress.lzf,\
+	!com.ning.compress.lzf.util,\
+	!com.sun.management,\
+	!com.sun.nio.file,\
+	!com.sun.nio.sctp,\
+	!gnu.io,\
+	!io.netty.internal.tcnative,\
+	!lzma.sdk,\
+	!lzma.sdk.lzma,\
+	!net.jpountz.lz4,\
+	!net.jpountz.xxhash,\
+	!org.apache.logging.log4j,\
+	!org.conscrypt,\
+	!org.eclipse.jetty.alpn,\
+	!org.eclipse.jetty.npn,\
+	!org.jboss.marshalling,\
+	!sun.nio.ch,\
+	!sun.security.util,\
+	!sun.security.x509,\
 	*
