@@ -11,6 +11,7 @@ buildscript {
 }
 
 apply plugin: 'com.liferay.plugin'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.8
 
