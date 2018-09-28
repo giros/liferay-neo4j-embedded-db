@@ -15,16 +15,19 @@
 package com.liferay.neo4j.embedded;
 
 import aQute.bnd.annotation.metatype.Configurable;
+
 import com.liferay.neo4j.embedded.configuration.EmbeddedGraphDatabaseConfiguration;
+
+import java.io.File;
+import java.util.Map;
+
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.metatype.annotations.Designate;
-
-import java.io.File;
-import java.util.Map;
 
 /**
  * @author Gergely Mathe
