@@ -21,9 +21,9 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
  * @author Gergely Mathe
  */
 @ObjectClassDefinition(
-	id = "com.liferay.neo4j.embedded.configuration.EmbdeddedGraphDatabaseConfiguration", name = "Liferay Embedded Neo4j Database Configuration"
+	id = "com.liferay.neo4j.embedded.configuration.EmbeddedGraphDatabaseConfiguration", name = "Liferay Embedded Neo4j Database Configuration"
 )
-public @interface EmbdeddedGraphDatabaseConfiguration {
+public @interface EmbeddedGraphDatabaseConfiguration {
 
 	@Meta.AD(deflt = "data/neo4j/default")
 	public String embeddedDatabasePath() default "data/neo4j/default";

@@ -15,7 +15,7 @@
 package com.liferay.neo4j.embedded;
 
 import aQute.bnd.annotation.metatype.Configurable;
-import com.liferay.neo4j.embedded.configuration.EmbdeddedGraphDatabaseConfiguration;
+import com.liferay.neo4j.embedded.configuration.EmbeddedGraphDatabaseConfiguration;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.osgi.service.component.annotations.Activate;
@@ -33,13 +33,13 @@ import java.util.Map;
 	configurationPid = "com.liferay.neo4j.embedded.configuration.EmbeddedGraphDatabaseConfiguration",
 	configurationPolicy = ConfigurationPolicy.REQUIRE,
 	immediate = true, service = EmbeddedGraphDatabase.class)
-@Designate(ocd = EmbdeddedGraphDatabaseConfiguration.class)
+@Designate(ocd = EmbeddedGraphDatabaseConfiguration.class)
 public class EmbeddedGraphDatabase {
 
 	@Activate
 	public void activate(Map<String, Object> properties) {
 		_embdeddedGraphDatabaseConfiguration = Configurable.createConfigurable(
-			EmbdeddedGraphDatabaseConfiguration.class, properties);
+			EmbeddedGraphDatabaseConfiguration.class, properties);
 
 		initialize();
 	}
@@ -61,7 +61,7 @@ public class EmbeddedGraphDatabase {
 				_embdeddedGraphDatabaseConfiguration.embeddedDatabasePath()));
 	}
 
-	private  EmbdeddedGraphDatabaseConfiguration
+	private EmbeddedGraphDatabaseConfiguration
 		_embdeddedGraphDatabaseConfiguration;
 	private GraphDatabaseService _embeddedDatabaseService;
 
