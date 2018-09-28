@@ -27,6 +27,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
+import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.metatype.annotations.Designate;
 
 /**
@@ -39,23 +40,30 @@ import org.osgi.service.metatype.annotations.Designate;
 @Designate(ocd = EmbeddedGraphDatabaseConfiguration.class)
 public class EmbeddedGraphDatabase {
 
-	@Activate
-	public void activate(Map<String, Object> properties) {
-		_embdeddedGraphDatabaseConfiguration = Configurable.createConfigurable(
-			EmbeddedGraphDatabaseConfiguration.class, properties);
-
-		initialize();
-	}
-
 	public GraphDatabaseService getEmbeddedDatabaseService() {
 		if (_embeddedDatabaseService == null) {
-			initialize();
+			_initialize();
 		}
 
 		return _embeddedDatabaseService;
 	}
 
-	public void initialize() {
+	@Activate
+	protected void activate(Map<String, Object> properties) {
+		_embdeddedGraphDatabaseConfiguration = Configurable.createConfigurable(
+			EmbeddedGraphDatabaseConfiguration.class, properties);
+
+		_initialize();
+	}
+
+	@Deactivate
+	protected void deactivate() {
+		if (_embeddedDatabaseService != null) {
+			_embeddedDatabaseService.shutdown();
+		}
+	}
+
+	private void _initialize() {
 		GraphDatabaseFactory graphDatabaseFactory =
 			new GraphDatabaseFactory();
 
